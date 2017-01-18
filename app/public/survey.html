@@ -16,9 +16,9 @@
         <hr>
         <h3>About You</h3>
         <h4>Name (Required):</h4>
-        <input type="text" class="form-control" placeholder="Text input">
+        <input type="text" class="form-control" id="name" placeholder="Text input">
         <h4>Link to Photo Image (Required):</h4>
-        <input type="text" class="form-control" placeholder="Text input">
+        <input type="text" class="form-control" id="photo" placeholder="Text input">
         <hr>
         <h3>
                 <strong>Question 1</strong>
@@ -158,6 +158,39 @@
     </footer>
     </div>
     <script src="../server.js"></script>
+    <script>
+    $(".btn").on('click', function() {
+
+        // store name and photo link as variables
+        var name = $('#name').val().trim();
+        var photoLink = $('#photo').val().trim();
+
+        // if name and photo link aren't blank:
+        if (name.length > 0 && photoLink.length > 0) {
+
+            // empty fields
+            $('#name').val('');
+            $('#photo').val('');
+
+            // create new friend object
+            var newFriend = {
+                name: name,
+                photo: photoLink,
+                scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val()]
+            };
+
+            // post data to friends API
+            $.post('/api/friends', newFriend);
+
+            // don't refresh
+            return false;
+
+            // if name and photo link are blank:
+        } else {
+            alert("Please enter all required fields.");
+        }
+    });
+    </script>
 </body>
 
 </html>

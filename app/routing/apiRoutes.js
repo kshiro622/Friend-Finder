@@ -16,10 +16,8 @@ module.exports = function(app) {
 
     // Add new entries
     app.post("/api/friends", function(req, res) {
-        var newperson = req.body;
-
-        people.push(newperson);
-
-        res.json(newperson);
+        var newFriend = req.body;
+        people.people.push(newFriend);
+        res.json(newFriend);
     });
 };
