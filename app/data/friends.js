@@ -1,5 +1,5 @@
 // Friend Data
-var people = [{
+exports.people = [{
     name: "Justin Timberlake",
     photo: "http://media4.popsugar-assets.com/files/2015/10/19/971/n/1922398/694c8798_edit_img_cover_file_38816787_1445286208_GettyImages-46RWZSa3.xxxlarge/i/Songs-Written-Justin-Timberlake.jpg",
     scores: ["5", "1", "4", "4", "5", "1", "2", "5", "4", "1"]

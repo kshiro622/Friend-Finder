@@ -1,9 +1,20 @@
+var bodyParser = require('body-parser');
 var path = require('path');
 
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
-});
+module.exports = function(app) {
 
-app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/survey.html"));
-});
+    // Set up express for data parsing
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.text());
+    app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+    //
+    app.get("/", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    });
+
+    app.get("/survey", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/survey.html"));
+    });
+};
