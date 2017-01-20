@@ -1,26 +1,24 @@
 {
-  "name": "friend-finder",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kshiro622/Friend-Finder.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kshiro622/Friend-Finder/issues"
-  },
-  "homepage": "https://github.com/kshiro622/Friend-Finder#readme",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "jquery": "^3.1.1",
-    "jsdom": "^9.9.1"
-  }
+    "name": "friend-finder",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kshiro622/Friend-Finder.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/kshiro622/Friend-Finder/issues"
+    },
+    "homepage": "https://github.com/kshiro622/Friend-Finder#readme",
+    "dependencies": {
+        "body-parser": "^1.15.2",
+        "express": "^4.14.0"
+    }
 }

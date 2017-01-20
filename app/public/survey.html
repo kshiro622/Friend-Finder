@@ -155,7 +155,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title">Your Friend Match</h2>
+                        <h2 class="modal-title"></h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -185,13 +185,24 @@
         // store name and photo link as variables
         var name = $('#name').val().trim();
         var photoLink = $('#photo').val().trim();
+        var ansLength = $('#q1').val().length + $('#q2').val().length + $('#q3').val().length + $('#q4').val().length + $('#q5').val().length + $('#q6').val().length + $('#q7').val().length + $('#q8').val().length + $('#q9').val().length + $('#q10').val().length;
 
         // if name and photo link aren't blank:
-        if (name.length > 0 && photoLink.length > 0) {
+        if (name.length > 0 && photoLink.length > 0 && ansLength === 10) {
 
             // empty fields
             $('#name').val('');
             $('#photo').val('');
+            $('#q1').val('');
+            $('#q2').val('');
+            $('#q3').val('');
+            $('#q4').val('');
+            $('#q5').val('');
+            $('#q6').val('');
+            $('#q7').val('');
+            $('#q8').val('');
+            $('#q9').val('');
+            $('#q10').val('');
 
             // create new friend object
             var newFriend = {
@@ -201,7 +212,8 @@
             };
             // post data to friends API
             $.post('/api/friends', newFriend, function(data) {
-                $('.modal-body').html('<h4>' + data.name + '</h4><img src="' + data.photo + '" alt="Friend Photo">');
+                $('.modal-title').html('Your Friend Match');
+                $('.modal-body').html('<h4>' + data.name + '</h4><img src="' + data.photo + '" alt="Friend Photo"><p>');
                 $('.modal').modal('show');
             });
             // don't refresh
@@ -209,7 +221,9 @@
 
             // if name and photo link are blank:
         } else {
-            alert('Please enter all required fields.');
+            $('.modal-title').html('Oops!');
+            $('.modal-body').html('All fields are required.');
+            $('.modal').modal('show');
         }
     });
     </script>
