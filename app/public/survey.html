@@ -190,6 +190,13 @@
         // if name and photo link aren't blank:
         if (name.length > 0 && photoLink.length > 0 && ansLength === 10) {
 
+            // create new friend object
+            var newFriend = {
+                name: name,
+                photo: photoLink,
+                scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val()]
+            };
+
             // empty fields
             $('#name').val('');
             $('#photo').val('');
@@ -204,16 +211,10 @@
             $('#q9').val('');
             $('#q10').val('');
 
-            // create new friend object
-            var newFriend = {
-                name: name,
-                photo: photoLink,
-                scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val()]
-            };
             // post data to friends API
             $.post('/api/friends', newFriend, function(data) {
                 $('.modal-title').html('Your Friend Match');
-                $('.modal-body').html('<h4>' + data.name + '</h4><img src="' + data.photo + '" alt="Friend Photo"><p>');
+                $('.modal-body').html('<h4>' + data.name + '</h4><img src="' + data.photo + '" alt="Friend Photo" height=300><p>');
                 $('.modal').modal('show');
             });
             // don't refresh

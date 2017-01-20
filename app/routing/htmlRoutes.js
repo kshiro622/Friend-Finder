@@ -9,12 +9,12 @@ module.exports = function(app) {
     app.use(bodyParser.text());
     app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-    //
-    app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/home.html"));
-    });
-
+    // routes
     app.get("/survey", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/survey.html"));
+    });
+
+    app.use(function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
     });
 };

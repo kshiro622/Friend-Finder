@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 var PORT = process.env.PORT || 3000;
 // routes
-var htmlRoutes = require('./app/routing/htmlRoutes')(app);
 var apiRoutes = require('./app/routing/apiRoutes')(app);
+var htmlRoutes = require('./app/routing/htmlRoutes')(app);
 //listen
 app.listen(PORT, function() {
     console.log('Listening on port: ' + PORT);
