@@ -23,4 +23,8 @@ exports.people = [{
     name: "Chandler Bing",
     photo: "http://www.interviewrussia.ru/sites/default/files/styles/feature_for_front/public/feature-chandler.gif",
     scores: ["4", "3", "1", "3", "2", "4", "3", "2", "4", "4"]
+}, {
+    name: "Beyonce",
+    photo: "https://cbsradionews.files.wordpress.com/2016/02/beyonce-super-bowl-50.jpg?w=640&h=360&crop=1",
+    scores: ["2", "1", "1", "5", "2", "5", "2", "1", "1", "5"]
 }];
